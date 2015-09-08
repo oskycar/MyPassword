@@ -2,7 +2,7 @@
 ==============================
 <img src="MyPassword/ic_launcher-web.png" width="200px"/>
 
-* E-mail：mail@zengdexing.com
+* E-mail：skyyang_chuang@163.com
 * File encoding：GBK
 * 你的支持是我最大的动力
 
@@ -17,6 +17,10 @@ QQ账号？微信号？邮箱密码？网站通行证？种种密码设置令人
 
 版本
 ---------------------------------
+###4.3.4 已完成
+  默认情况下账号、密码、备注均隐藏显示
+  加入checkbox，选中时才显示对应账号信息
+  
 ###4.3.3 已完成
 - 增加删除密码分组、修改密码分组名、合并密码分组功能
 - 提升密码的安全，使用用户手势加密
@@ -58,3 +62,4 @@ QQ账号？微信号？邮箱密码？网站通行证？种种密码设置令人
 <img src="Screenshot/002.png" width="330px"/>
 <img src="Screenshot/003.png" width="330px"/>
 <img src="Screenshot/004.png" width="330px"/>
+<img src="Screenshot/005.png" width="330px"/>

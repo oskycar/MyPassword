@@ -23,7 +23,7 @@ import cn.zdx.lib.annotation.FindViewById;
 public class AboutActivity extends BaseActivity {
 
 	/** 源码地址 */
-	private static final String GITHUB_SOURCE = "https://github.com/o602075123/MyPassword";
+	private static final String GITHUB_SOURCE = "https://github.com/oskycar/MyPassword";
 
 	/** 版本显示控件 */
 	@FindViewById(R.id.about_version)
