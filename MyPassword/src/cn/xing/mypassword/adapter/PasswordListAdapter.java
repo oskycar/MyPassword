@@ -14,11 +14,15 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.text.InputType;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 import cn.xing.mypassword.R;
@@ -125,6 +129,7 @@ public class PasswordListAdapter extends BaseAdapter {
 			viewHolder.copyView.setOnClickListener(viewHolder);
 			viewHolder.deleteView.setOnClickListener(viewHolder);
 			viewHolder.editView.setOnClickListener(viewHolder);
+			viewHolder.checkView.setOnClickListener(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
@@ -173,6 +178,9 @@ public class PasswordListAdapter extends BaseAdapter {
 		@FindViewById(R.id.main_item_edit)
 		public View editView;
 
+		@FindViewById(R.id.main_item_password_checkview)
+		public CheckBox checkView;
+		
 		private PasswordItem passwordItem;
 
 		@Override
@@ -187,12 +195,29 @@ public class PasswordListAdapter extends BaseAdapter {
 				case R.id.main_item_edit:
 					onEditClick();
 					break;
-
+				case R.id.main_item_password_checkview:
+					onCheckClick();
+					break;
 				default:
 					break;
 			}
 		}
-
+		private void onCheckClick(){
+			boolean ischeck = checkView.isChecked();
+			if(ischeck)//选中后显示内容，取消选中则隐藏内容
+			{
+				nameView.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+				passwordView.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+				noteView.setVisibility(View.VISIBLE);
+			}
+			else{
+				nameView.setTransformationMethod(PasswordTransformationMethod.getInstance());
+				passwordView.setTransformationMethod(PasswordTransformationMethod.getInstance());
+				noteView.setVisibility(View.GONE);
+				
+				
+			}
+		}
 		private void onCopyClick() {
 			Builder builder = new Builder(context);
 
